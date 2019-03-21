@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Defender resource:
+
+  # CREATE
+  get("/defenders/new", { :controller => "defenders", :action => "new_form" })
+  post("/create_defender", { :controller => "defenders", :action => "create_row" })
+
+  # READ
+  get("/defenders", { :controller => "defenders", :action => "index" })
+  get("/defenders/:id_to_display", { :controller => "defenders", :action => "show" })
+
+  # UPDATE
+  get("/defenders/:prefill_with_id/edit", { :controller => "defenders", :action => "edit_form" })
+  post("/update_defender/:id_to_modify", { :controller => "defenders", :action => "update_row" })
+
+  # DELETE
+  get("/delete_defender/:id_to_remove", { :controller => "defenders", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Goalkeeper resource:
 
   # CREATE
