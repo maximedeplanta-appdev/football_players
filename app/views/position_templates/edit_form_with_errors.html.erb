@@ -1,0 +1,29 @@
+<!-- Validation failure messages -->
+<% if @position.errors.any? %>
+  <% @position.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit position #<%= @position.id %>
+</h1>
+
+<hr>
+
+<!-- Form position start -->
+<form action="/update_position/<%= @position.id %>" method="post">
+<!-- Form position end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update position
+  </button>
+</form>
+
+<hr>
+
+<a href="/positions">
+  Go back
+</a>

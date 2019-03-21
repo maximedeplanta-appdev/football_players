@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Position resource:
+
+  # CREATE
+  get("/positions/new", { :controller => "positions", :action => "new_form" })
+  post("/create_position", { :controller => "positions", :action => "create_row" })
+
+  # READ
+  get("/positions", { :controller => "positions", :action => "index" })
+  get("/positions/:id_to_display", { :controller => "positions", :action => "show" })
+
+  # UPDATE
+  get("/positions/:prefill_with_id/edit", { :controller => "positions", :action => "edit_form" })
+  post("/update_position/:id_to_modify", { :controller => "positions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_position/:id_to_remove", { :controller => "positions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Midfielder resource:
 
   # CREATE
