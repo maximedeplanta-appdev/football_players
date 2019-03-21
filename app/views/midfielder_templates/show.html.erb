@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Midfielder #<%= @midfielder.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/midfielders" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link midfielder start -->
+      <div class="col">
+        <a href="/midfielders/<%= @midfielder.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit midfielder
+        </a>
+      </div>
+      <!-- Edit link midfielder end -->
+
+      <!-- Delete link midfielder start -->
+      <div class="col">
+        <a href="/delete_midfielder/<%= @midfielder.id %>" class="btn btn-block btn-outline-secondary">
+          Delete midfielder
+        </a>
+      </div>
+      <!-- Delete link midfielder end -->
+    </div>
+
+    <dl>
+      <dt>
+        Position
+      </dt>
+      <!-- Display position_id start -->
+      <dd>
+        <%= @midfielder.position_id %>
+      </dd>
+      <!-- Display position_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@midfielder.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@midfielder.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

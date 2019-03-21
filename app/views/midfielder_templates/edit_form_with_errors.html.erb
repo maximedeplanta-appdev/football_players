@@ -1,0 +1,41 @@
+<!-- Validation failure messages -->
+<% if @midfielder.errors.any? %>
+  <% @midfielder.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit midfielder #<%= @midfielder.id %>
+</h1>
+
+<hr>
+
+<!-- Form midfielder start -->
+<form action="/update_midfielder/<%= @midfielder.id %>" method="post">
+<!-- Form midfielder end -->
+
+  <!-- Label and input for position_id start -->
+  <div class="form-group">
+    <label for="position_id">
+      Position
+    </label>
+
+    <!-- Input for position_id start -->
+    <input type="text" id="position_id" name="position_id" class="form-control" value="<%= @midfielder.position_id %>">
+    <!-- Input for position_id end -->
+  </div>
+  <!-- Label and input for position_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update midfielder
+  </button>
+</form>
+
+<hr>
+
+<a href="/midfielders">
+  Go back
+</a>
