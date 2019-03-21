@@ -31,6 +31,20 @@ class GoalkeepersController < ApplicationController
     end
   end
 
+  def create_row_from_position
+    @goalkeeper = Goalkeeper.new
+
+    @goalkeeper.position_id = params.fetch("position_id")
+
+    if @goalkeeper.valid?
+      @goalkeeper.save
+
+      redirect_to("/positions/#{@goalkeeper.position_id}", notice: "Goalkeeper created successfully.")
+    else
+      render("goalkeeper_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @goalkeeper = Goalkeeper.find(params.fetch("prefill_with_id"))
 

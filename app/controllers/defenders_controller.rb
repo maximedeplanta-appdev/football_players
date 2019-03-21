@@ -31,6 +31,20 @@ class DefendersController < ApplicationController
     end
   end
 
+  def create_row_from_position
+    @defender = Defender.new
+
+    @defender.position_id = params.fetch("position_id")
+
+    if @defender.valid?
+      @defender.save
+
+      redirect_to("/positions/#{@defender.position_id}", notice: "Defender created successfully.")
+    else
+      render("defender_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @defender = Defender.find(params.fetch("prefill_with_id"))
 

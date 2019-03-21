@@ -36,6 +36,25 @@ class PlayersController < ApplicationController
     end
   end
 
+  def create_row_from_position
+    @player = Player.new
+
+    @player.nationality = params.fetch("nationality")
+    @player.club = params.fetch("club")
+    @player.age = params.fetch("age")
+    @player.position_id = params.fetch("position_id")
+    @player.name = params.fetch("name")
+    @player.level = params.fetch("level")
+
+    if @player.valid?
+      @player.save
+
+      redirect_to("/positions/#{@player.position_id}", notice: "Player created successfully.")
+    else
+      render("player_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @player = Player.find(params.fetch("prefill_with_id"))
 

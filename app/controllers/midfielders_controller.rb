@@ -31,6 +31,20 @@ class MidfieldersController < ApplicationController
     end
   end
 
+  def create_row_from_position
+    @midfielder = Midfielder.new
+
+    @midfielder.position_id = params.fetch("position_id")
+
+    if @midfielder.valid?
+      @midfielder.save
+
+      redirect_to("/positions/#{@midfielder.position_id}", notice: "Midfielder created successfully.")
+    else
+      render("midfielder_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @midfielder = Midfielder.find(params.fetch("prefill_with_id"))
 

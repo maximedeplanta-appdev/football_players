@@ -6,6 +6,11 @@ class PositionsController < ApplicationController
   end
 
   def show
+    @forward = Forward.new
+    @midfielder = Midfielder.new
+    @defender = Defender.new
+    @goalkeeper = Goalkeeper.new
+    @player = Player.new
     @position = Position.find(params.fetch("id_to_display"))
 
     render("position_templates/show.html.erb")

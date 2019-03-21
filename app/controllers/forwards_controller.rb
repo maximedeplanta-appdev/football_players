@@ -31,6 +31,20 @@ class ForwardsController < ApplicationController
     end
   end
 
+  def create_row_from_position
+    @forward = Forward.new
+
+    @forward.position_id = params.fetch("position_id")
+
+    if @forward.valid?
+      @forward.save
+
+      redirect_to("/positions/#{@forward.position_id}", notice: "Forward created successfully.")
+    else
+      render("forward_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @forward = Forward.find(params.fetch("prefill_with_id"))
 

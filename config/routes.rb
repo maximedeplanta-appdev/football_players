@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/forwards/new", { :controller => "forwards", :action => "new_form" })
   post("/create_forward", { :controller => "forwards", :action => "create_row" })
+  post("/create_forward_from_position", { :controller => "forwards", :action => "create_row_from_position" })
 
   # READ
   get("/forwards", { :controller => "forwards", :action => "index" })
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/midfielders/new", { :controller => "midfielders", :action => "new_form" })
   post("/create_midfielder", { :controller => "midfielders", :action => "create_row" })
+  post("/create_midfielder_from_position", { :controller => "midfielders", :action => "create_row_from_position" })
 
   # READ
   get("/midfielders", { :controller => "midfielders", :action => "index" })
@@ -65,6 +67,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/defenders/new", { :controller => "defenders", :action => "new_form" })
   post("/create_defender", { :controller => "defenders", :action => "create_row" })
+  post("/create_defender_from_position", { :controller => "defenders", :action => "create_row_from_position" })
 
   # READ
   get("/defenders", { :controller => "defenders", :action => "index" })
@@ -85,6 +88,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/goalkeepers/new", { :controller => "goalkeepers", :action => "new_form" })
   post("/create_goalkeeper", { :controller => "goalkeepers", :action => "create_row" })
+  post("/create_goalkeeper_from_position", { :controller => "goalkeepers", :action => "create_row_from_position" })
 
   # READ
   get("/goalkeepers", { :controller => "goalkeepers", :action => "index" })
@@ -105,6 +109,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/players/new", { :controller => "players", :action => "new_form" })
   post("/create_player", { :controller => "players", :action => "create_row" })
+  post("/create_player_from_position", { :controller => "players", :action => "create_row_from_position" })
 
   # READ
   get("/players", { :controller => "players", :action => "index" })
