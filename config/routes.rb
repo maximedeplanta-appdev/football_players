@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Forward resource:
+
+  # CREATE
+  get("/forwards/new", { :controller => "forwards", :action => "new_form" })
+  post("/create_forward", { :controller => "forwards", :action => "create_row" })
+
+  # READ
+  get("/forwards", { :controller => "forwards", :action => "index" })
+  get("/forwards/:id_to_display", { :controller => "forwards", :action => "show" })
+
+  # UPDATE
+  get("/forwards/:prefill_with_id/edit", { :controller => "forwards", :action => "edit_form" })
+  post("/update_forward/:id_to_modify", { :controller => "forwards", :action => "update_row" })
+
+  # DELETE
+  get("/delete_forward/:id_to_remove", { :controller => "forwards", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Position resource:
 
   # CREATE
