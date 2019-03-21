@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Goalkeeper resource:
+
+  # CREATE
+  get("/goalkeepers/new", { :controller => "goalkeepers", :action => "new_form" })
+  post("/create_goalkeeper", { :controller => "goalkeepers", :action => "create_row" })
+
+  # READ
+  get("/goalkeepers", { :controller => "goalkeepers", :action => "index" })
+  get("/goalkeepers/:id_to_display", { :controller => "goalkeepers", :action => "show" })
+
+  # UPDATE
+  get("/goalkeepers/:prefill_with_id/edit", { :controller => "goalkeepers", :action => "edit_form" })
+  post("/update_goalkeeper/:id_to_modify", { :controller => "goalkeepers", :action => "update_row" })
+
+  # DELETE
+  get("/delete_goalkeeper/:id_to_remove", { :controller => "goalkeepers", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Player resource:
 
   # CREATE

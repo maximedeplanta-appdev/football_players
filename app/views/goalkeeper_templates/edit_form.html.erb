@@ -1,0 +1,32 @@
+<h1>
+  Edit goalkeeper #<%= @goalkeeper.id %>
+</h1>
+
+<hr>
+
+<!-- Form goalkeeper start -->
+<form action="/update_goalkeeper/<%= @goalkeeper.id %>" method="post">
+<!-- Form goalkeeper end -->
+
+  <!-- Label and input for position_id start -->
+  <div class="form-group">
+    <label for="position_id">
+      Position
+    </label>
+
+    <!-- Input for position_id start -->
+    <input type="text" id="position_id" name="position_id" class="form-control" value="<%= @goalkeeper.position_id %>">
+    <!-- Input for position_id end -->
+  </div>
+  <!-- Label and input for position_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update goalkeeper
+  </button>
+</form>
+
+<hr>
+
+<a href="/goalkeepers">
+  Go back
+</a>
