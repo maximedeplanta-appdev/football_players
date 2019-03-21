@@ -1,6 +1,7 @@
 class MidfieldersController < ApplicationController
   def index
-    @midfielders = Midfielder.page(params[:page]).per(10)
+    @q = Midfielder.ransack(params[:q])
+    @midfielders = @q.result(:distinct => true).includes(:position).page(params[:page]).per(10)
 
     render("midfielder_templates/index.html.erb")
   end

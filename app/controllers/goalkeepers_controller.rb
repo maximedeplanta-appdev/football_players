@@ -1,6 +1,7 @@
 class GoalkeepersController < ApplicationController
   def index
-    @goalkeepers = Goalkeeper.page(params[:page]).per(10)
+    @q = Goalkeeper.ransack(params[:q])
+    @goalkeepers = @q.result(:distinct => true).includes(:position).page(params[:page]).per(10)
 
     render("goalkeeper_templates/index.html.erb")
   end

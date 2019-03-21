@@ -1,6 +1,7 @@
 class ForwardsController < ApplicationController
   def index
-    @forwards = Forward.page(params[:page]).per(10)
+    @q = Forward.ransack(params[:q])
+    @forwards = @q.result(:distinct => true).includes(:forward).page(params[:page]).per(10)
 
     render("forward_templates/index.html.erb")
   end

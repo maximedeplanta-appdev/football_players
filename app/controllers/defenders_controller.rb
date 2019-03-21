@@ -1,6 +1,7 @@
 class DefendersController < ApplicationController
   def index
-    @defenders = Defender.page(params[:page]).per(10)
+    @q = Defender.ransack(params[:q])
+    @defenders = @q.result(:distinct => true).includes(:position).page(params[:page]).per(10)
 
     render("defender_templates/index.html.erb")
   end
