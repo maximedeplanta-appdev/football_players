@@ -1,6 +1,9 @@
 class Position < ApplicationRecord
   # Direct associations
 
+  has_many   :midfielders,
+             :dependent => :destroy
+
   has_many   :defenders,
              :dependent => :destroy
 
