@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @forward.present? %>
   <% if @forward.errors.any? %>
     <% @forward.errors.full_messages.each do |message| %>
@@ -16,21 +15,15 @@
 
 <hr>
 
-<!-- Form forward start -->
 <form action="/create_forward" method="post">
-<!-- Form forward end -->
 
-  <!-- Label and input for position_id start -->
   <div class="form-group">
     <label for="position_id">
       Position
     </label>
 
-    <!-- Input for position_id start -->
     <%= select_tag(:position_id, options_from_collection_for_select(Position.all, :id, :created_at, @forward.position_id), :class => "form-control") %>
-    <!-- Input for position_id end -->
   </div>
-  <!-- Label and input for position_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create forward

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @position.present? %>
   <% if @position.errors.any? %>
     <% @position.errors.full_messages.each do |message| %>
@@ -16,9 +15,7 @@
 
 <hr>
 
-<!-- Form position start -->
 <form action="/create_position" method="post">
-<!-- Form position end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create position

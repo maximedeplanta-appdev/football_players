@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link player start -->
       <div class="col">
         <a href="/players/<%= @player.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit player
         </a>
       </div>
-      <!-- Edit link player end -->
 
-      <!-- Delete link player start -->
       <div class="col">
         <a href="/delete_player/<%= @player.id %>" class="btn btn-block btn-outline-secondary">
           Delete player
         </a>
       </div>
-      <!-- Delete link player end -->
     </div>
 
     <dl>
       <dt>
         Nationality
       </dt>
-      <!-- Display nationality start -->
       <dd>
         <%= @player.nationality %>
       </dd>
-      <!-- Display nationality end -->
 
       <dt>
         Club
       </dt>
-      <!-- Display club start -->
       <dd>
         <%= @player.club %>
       </dd>
-      <!-- Display club end -->
 
       <dt>
         Age
       </dt>
-      <!-- Display age start -->
       <dd>
         <%= @player.age %>
       </dd>
-      <!-- Display age end -->
 
       <dt>
         Position
       </dt>
-      <!-- Display position_id start -->
       <dd>
         <% if @player.position.present? %>
           <a href="/positions/<%= @player.position_id %>">
@@ -67,46 +56,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display position_id end -->
 
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @player.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Level
       </dt>
-      <!-- Display level start -->
       <dd>
         <%= @player.level %>
       </dd>
-      <!-- Display level end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@player.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@player.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

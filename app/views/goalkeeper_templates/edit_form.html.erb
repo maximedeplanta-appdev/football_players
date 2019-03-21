@@ -4,21 +4,15 @@
 
 <hr>
 
-<!-- Form goalkeeper start -->
 <form action="/update_goalkeeper/<%= @goalkeeper.id %>" method="post">
-<!-- Form goalkeeper end -->
 
-  <!-- Label and input for position_id start -->
   <div class="form-group">
     <label for="position_id">
       Position
     </label>
 
-    <!-- Input for position_id start -->
     <%= select_tag(:position_id, options_from_collection_for_select(Position.all, :id, :created_at, @goalkeeper.position_id), :class => "form-control") %>
-    <!-- Input for position_id end -->
   </div>
-  <!-- Label and input for position_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update goalkeeper

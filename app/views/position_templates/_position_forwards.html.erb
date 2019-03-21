@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @position.forwards.each do |forward| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/forwards/<%= forward.id %>">
           <%= forward.position_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_forward_from_forward/<%= forward.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="position_forwards_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "position_templates/position_forwards_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

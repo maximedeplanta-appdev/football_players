@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link forward start -->
       <div class="col">
         <a href="/forwards/<%= @forward.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit forward
         </a>
       </div>
-      <!-- Edit link forward end -->
 
-      <!-- Delete link forward start -->
       <div class="col">
         <a href="/delete_forward/<%= @forward.id %>" class="btn btn-block btn-outline-secondary">
           Delete forward
         </a>
       </div>
-      <!-- Delete link forward end -->
     </div>
 
     <dl>
       <dt>
         Position
       </dt>
-      <!-- Display position_id start -->
       <dd>
         <% if @forward.forward.present? %>
           <a href="/positions/<%= @forward.position_id %>">
@@ -40,28 +35,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display position_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@forward.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@forward.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

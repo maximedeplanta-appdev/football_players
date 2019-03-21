@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @player.present? %>
   <% if @player.errors.any? %>
     <% @player.errors.full_messages.each do |message| %>
@@ -16,81 +15,55 @@
 
 <hr>
 
-<!-- Form player start -->
 <form action="/create_player" method="post">
-<!-- Form player end -->
 
-  <!-- Label and input for nationality start -->
   <div class="form-group">
     <label for="nationality">
       Nationality
     </label>
 
-    <!-- Input for nationality start -->
     <input type="text" id="nationality" name="nationality" class="form-control" value="<%= @player.nationality %>">
-    <!-- Input for nationality end -->
   </div>
-  <!-- Label and input for nationality end -->
 
-  <!-- Label and input for club start -->
   <div class="form-group">
     <label for="club">
       Club
     </label>
 
-    <!-- Input for club start -->
     <input type="text" id="club" name="club" class="form-control" value="<%= @player.club %>">
-    <!-- Input for club end -->
   </div>
-  <!-- Label and input for club end -->
 
-  <!-- Label and input for age start -->
   <div class="form-group">
     <label for="age">
       Age
     </label>
 
-    <!-- Input for age start -->
     <input type="text" id="age" name="age" class="form-control" value="<%= @player.age %>">
-    <!-- Input for age end -->
   </div>
-  <!-- Label and input for age end -->
 
-  <!-- Label and input for position_id start -->
   <div class="form-group">
     <label for="position_id">
       Position
     </label>
 
-    <!-- Input for position_id start -->
     <%= select_tag(:position_id, options_from_collection_for_select(Position.all, :id, :created_at, @player.position_id), :class => "form-control") %>
-    <!-- Input for position_id end -->
   </div>
-  <!-- Label and input for position_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @player.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for level start -->
   <div class="form-group">
     <label for="level">
       Level
     </label>
 
-    <!-- Input for level start -->
     <input type="text" id="level" name="level" class="form-control" value="<%= @player.level %>">
-    <!-- Input for level end -->
   </div>
-  <!-- Label and input for level end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create player
