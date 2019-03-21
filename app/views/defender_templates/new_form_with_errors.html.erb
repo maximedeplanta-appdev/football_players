@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for position_id start -->
-    <input type="text" id="position_id" name="position_id" class="form-control" value="<%= @defender.position_id %>">
+    <%= select_tag(:position_id, options_from_collection_for_select(Position.all, :id, :created_at, @defender.position_id), :class => "form-control") %>
     <!-- Input for position_id end -->
   </div>
   <!-- Label and input for position_id end -->
