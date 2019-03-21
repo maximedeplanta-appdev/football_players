@@ -54,7 +54,11 @@
 
         <!-- Display midfielder.position_id start -->
         <td>
-          <%= midfielder.position.created_at %>
+          <% if midfielder.position.present? %>
+            <a href="/positions/<%= midfielder.position.id %>">
+              <%= midfielder.position.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display midfielder.position_id end -->
 

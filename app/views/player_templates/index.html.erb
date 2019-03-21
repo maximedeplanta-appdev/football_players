@@ -92,7 +92,11 @@
 
         <!-- Display player.position_id start -->
         <td>
-          <%= player.position.created_at %>
+          <% if player.position.present? %>
+            <a href="/positions/<%= player.position.id %>">
+              <%= player.position.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display player.position_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display position_id start -->
       <dd>
-        <%= @defender.position_id %>
+        <% if @defender.position.present? %>
+          <a href="/positions/<%= @defender.position_id %>">
+            <%= @defender.position.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display position_id end -->
 

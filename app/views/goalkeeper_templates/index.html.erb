@@ -54,7 +54,11 @@
 
         <!-- Display goalkeeper.position_id start -->
         <td>
-          <%= goalkeeper.position.created_at %>
+          <% if goalkeeper.position.present? %>
+            <a href="/positions/<%= goalkeeper.position.id %>">
+              <%= goalkeeper.position.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display goalkeeper.position_id end -->
 

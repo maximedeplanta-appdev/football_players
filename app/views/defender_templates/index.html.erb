@@ -54,7 +54,11 @@
 
         <!-- Display defender.position_id start -->
         <td>
-          <%= defender.position.created_at %>
+          <% if defender.position.present? %>
+            <a href="/positions/<%= defender.position.id %>">
+              <%= defender.position.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display defender.position_id end -->
 
