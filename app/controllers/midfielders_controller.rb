@@ -51,6 +51,14 @@ class MidfieldersController < ApplicationController
     end
   end
 
+  def destroy_row_from_position
+    @midfielder = Midfielder.find(params.fetch("id_to_remove"))
+
+    @midfielder.destroy
+
+    redirect_to("/positions/#{@midfielder.position_id}", notice: "Midfielder deleted successfully.")
+  end
+
   def destroy_row
     @midfielder = Midfielder.find(params.fetch("id_to_remove"))
 

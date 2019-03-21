@@ -51,6 +51,14 @@ class DefendersController < ApplicationController
     end
   end
 
+  def destroy_row_from_position
+    @defender = Defender.find(params.fetch("id_to_remove"))
+
+    @defender.destroy
+
+    redirect_to("/positions/#{@defender.position_id}", notice: "Defender deleted successfully.")
+  end
+
   def destroy_row
     @defender = Defender.find(params.fetch("id_to_remove"))
 

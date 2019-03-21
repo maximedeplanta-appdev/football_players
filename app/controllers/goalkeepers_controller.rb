@@ -51,6 +51,14 @@ class GoalkeepersController < ApplicationController
     end
   end
 
+  def destroy_row_from_position
+    @goalkeeper = Goalkeeper.find(params.fetch("id_to_remove"))
+
+    @goalkeeper.destroy
+
+    redirect_to("/positions/#{@goalkeeper.position_id}", notice: "Goalkeeper deleted successfully.")
+  end
+
   def destroy_row
     @goalkeeper = Goalkeeper.find(params.fetch("id_to_remove"))
 

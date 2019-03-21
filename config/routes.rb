@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_forward/:id_to_remove", { :controller => "forwards", :action => "destroy_row" })
+  get("/delete_forward_from_forward/:id_to_remove", { :controller => "forwards", :action => "destroy_row_from_forward" })
 
   #------------------------------
 
@@ -55,6 +56,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_midfielder/:id_to_remove", { :controller => "midfielders", :action => "destroy_row" })
+  get("/delete_midfielder_from_position/:id_to_remove", { :controller => "midfielders", :action => "destroy_row_from_position" })
 
   #------------------------------
 
@@ -74,6 +76,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_defender/:id_to_remove", { :controller => "defenders", :action => "destroy_row" })
+  get("/delete_defender_from_position/:id_to_remove", { :controller => "defenders", :action => "destroy_row_from_position" })
 
   #------------------------------
 
@@ -93,6 +96,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_goalkeeper/:id_to_remove", { :controller => "goalkeepers", :action => "destroy_row" })
+  get("/delete_goalkeeper_from_position/:id_to_remove", { :controller => "goalkeepers", :action => "destroy_row_from_position" })
 
   #------------------------------
 
@@ -112,6 +116,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_player/:id_to_remove", { :controller => "players", :action => "destroy_row" })
+  get("/delete_player_from_position/:id_to_remove", { :controller => "players", :action => "destroy_row_from_position" })
 
   #------------------------------
 

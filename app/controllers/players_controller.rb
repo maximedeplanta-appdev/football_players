@@ -61,6 +61,14 @@ class PlayersController < ApplicationController
     end
   end
 
+  def destroy_row_from_position
+    @player = Player.find(params.fetch("id_to_remove"))
+
+    @player.destroy
+
+    redirect_to("/positions/#{@player.position_id}", notice: "Player deleted successfully.")
+  end
+
   def destroy_row
     @player = Player.find(params.fetch("id_to_remove"))
 

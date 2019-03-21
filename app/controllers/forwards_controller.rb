@@ -51,6 +51,14 @@ class ForwardsController < ApplicationController
     end
   end
 
+  def destroy_row_from_forward
+    @forward = Forward.find(params.fetch("id_to_remove"))
+
+    @forward.destroy
+
+    redirect_to("/positions/#{@forward.position_id}", notice: "Forward deleted successfully.")
+  end
+
   def destroy_row
     @forward = Forward.find(params.fetch("id_to_remove"))
 
