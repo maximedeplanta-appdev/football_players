@@ -4,6 +4,8 @@ RSpec.describe Position, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:goalkeepers) }
+
     it { should have_many(:players) }
 
     end
