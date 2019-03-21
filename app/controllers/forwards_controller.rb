@@ -1,6 +1,6 @@
 class ForwardsController < ApplicationController
   def index
-    @forwards = Forward.all
+    @forwards = Forward.page(params[:page]).per(10)
 
     render("forward_templates/index.html.erb")
   end

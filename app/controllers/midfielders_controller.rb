@@ -1,6 +1,6 @@
 class MidfieldersController < ApplicationController
   def index
-    @midfielders = Midfielder.all
+    @midfielders = Midfielder.page(params[:page]).per(10)
 
     render("midfielder_templates/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class GoalkeepersController < ApplicationController
   def index
-    @goalkeepers = Goalkeeper.all
+    @goalkeepers = Goalkeeper.page(params[:page]).per(10)
 
     render("goalkeeper_templates/index.html.erb")
   end

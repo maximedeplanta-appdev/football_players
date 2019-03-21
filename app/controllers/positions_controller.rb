@@ -1,6 +1,6 @@
 class PositionsController < ApplicationController
   def index
-    @positions = Position.all
+    @positions = Position.page(params[:page]).per(10)
 
     render("position_templates/index.html.erb")
   end

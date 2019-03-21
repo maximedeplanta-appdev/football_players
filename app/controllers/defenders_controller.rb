@@ -1,6 +1,6 @@
 class DefendersController < ApplicationController
   def index
-    @defenders = Defender.all
+    @defenders = Defender.page(params[:page]).per(10)
 
     render("defender_templates/index.html.erb")
   end
